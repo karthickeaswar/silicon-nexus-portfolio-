@@ -1,8 +1,8 @@
 {
     "rewrites": [
         {
-            "source": "/api/(.*)",
-            "destination": "/api/$1"
+            "source": "/((?!assets/|styles.css|script.js|favicon.ico).*)",
+            "destination": "/api/index.js"
         }
     ],
     "headers": [

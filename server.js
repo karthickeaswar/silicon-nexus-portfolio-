@@ -38,7 +38,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // ── Static Files ──
-app.use(express.static(path.join(__dirname), {
+app.use(express.static(path.join(__dirname, 'public'), {
     maxAge: '1d',
     setHeaders: (res, filePath) => {
         if (filePath.endsWith('.html')) {
@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname), {
 
 // ── Fallback to index.html ──
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // ── Error Handler ──
