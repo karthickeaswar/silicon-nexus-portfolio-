@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Easwaramoorthy Sriram — Semiconductor Engineer & Student Researcher specializing in VLSI Design, mmWave IC, and RISC-V Processor Architecture.">
+  <title>Easwaramoorthy Sriram | Semiconductor Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>⚡</text></svg>">
+</head>
+
+<body>
+  <!-- ═══ LOADER ═══ -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-text">⚡ Initializing Silicon...</div>
+    </div>
+  </div>
+
+  <!-- ═══ CURSOR ═══ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══ SCROLL PROGRESS ═══ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav" id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo"><span class="logo-chip">ES</span> Sriram</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container hero-grid">
+      <!-- Left: Text Content -->
+      <div class="hero-left">
+        <div class="hero-badge anim-fade-up">
+          <span class="pulse-dot"></span> Open to Research Opportunities
+        </div>
+
+        <h1 class="hero-title anim-fade-up delay-1">
+          <span class="grad-text">Easwaramoorthy</span><br>
+          <span class="grad-text-2">Sriram</span>
+        </h1>
+
+        <div class="hero-typed anim-fade-up delay-2">
+          <span class="typed-label">I am a</span>
+          <span id="typedText" class="typed-value"></span><span class="cursor-blink">|</span>
+        </div>
+
+        <p class="hero-desc anim-fade-up delay-3">
+          Passionate Electronics & Communication Engineer with distinguished credentials in
+          <strong>VLSI Design</strong>, <strong>RF & mmWave</strong>, and <strong>RISC-V Architecture</strong>
+          — bridging the gap between simulation and silicon.
+        </p>
+
+        <div class="hero-btns anim-fade-up delay-4">
+          <a href="#projects" class="btn-primary">🔬 View Research</a>
+          <a href="#contact" class="btn-ghost">✉️ Contact Me</a>
+        </div>
+
+        <div class="hero-stats anim-fade-up delay-5">
+          <div class="stat">
+            <strong class="counter" data-target="8.2">0</strong><span>/10 CGPA</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat">
+            <strong class="counter" data-target="5">0</strong><span>+ Projects</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat">
+            <strong class="accent-text">TNSCST</strong><span>Funded</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Profile Photo -->
+      <div class="hero-right anim-fade-up delay-3">
+        <div class="profile-wrap">
+          <canvas id="orbCanvas" class="orb-canvas"></canvas>
+          <div class="profile-glow"></div>
+          <div class="profile-ring ring-1"></div>
+          <div class="profile-ring ring-2"></div>
+          <div class="profile-ring ring-3"></div>
+          <img src="assets/Gemini_Generated_Image_r7k6aer7k6aer7k6.png" alt="Easwaramoorthy Sriram" class="profile-img">
+          <div class="profile-shimmer"></div>
+          <!-- Floating Badges -->
+          <div class="float-badge fb-1">🏆 TNSCST Funded</div>
+          <div class="float-badge fb-2">📡 RF Designer</div>
+          <div class="float-badge fb-3">🧮 RISC-V</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══ MARQUEE ═══ -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>⚡ Verilog</span><span>📡 RF Design</span><span>🏗️ RISC-V</span><span>🔬 VLSI</span>
+      <span>📐 Cadence Virtuoso</span><span>🧪 TCAD</span><span>📡 CST Studio</span>
+      <span>⚙️ SystemVerilog</span><span>📶 Antenna Design</span><span>🧊 VCO/PLL</span>
+      <span>🏭 BiCMOS</span><span>💻 FPGA</span>
+      <span>⚡ Verilog</span><span>📡 RF Design</span><span>🏗️ RISC-V</span><span>🔬 VLSI</span>
+      <span>📐 Cadence Virtuoso</span><span>🧪 TCAD</span><span>📡 CST Studio</span>
+      <span>⚙️ SystemVerilog</span><span>📶 Antenna Design</span><span>🧊 VCO/PLL</span>
+      <span>🏭 BiCMOS</span><span>💻 FPGA</span>
+    </div>
+  </div>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">⚡ About Me</span>
+        <h2>Bridging the Gap Between<br>Simulation & Silicon</h2>
+      </div>
+      <div class="about-layout">
+        <div class="about-photo reveal">
+          <div class="about-photo-inner">
+            <img src="assets/profile-formal.jpg" alt="Easwaramoorthy Sriram" loading="lazy">
+            <div class="about-photo-border"></div>
+          </div>
+          <div class="about-float-card">
+            <span class="afc-emoji">🏆</span>
+            <div><strong>TNSCST Funded</strong><br><small>Student Researcher</small></div>
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="about-text reveal">
+            I still remember the exact moment I stopped thinking of circuits as textbook problems. Standing in the RF
+            lab, holding a small FR4 board I had fabricated — a 6G Edge-Fed 2×2 Array Antenna designed in CST Studio.
+            When the S11 dipped below −10 dB right where my simulation predicted, I understood —
+            <em>the gap between a simulation and a working device is where real engineering lives</em>.
+          </p>
+          <p class="about-text reveal">
+            That conviction carried me into research with a TNSCST-funded grant, industry experience at RWS IP
+            Solutions, and a multi-domain technical foundation spanning analog RF, digital VLSI, and RISC-V processor
+            design.
+          </p>
+          <div class="about-cards reveal">
+            <div class="mini-card"><span>🔬</span><strong>TNSCST Researcher</strong><small>Funded research grant</small>
+            </div>
+            <div class="mini-card"><span>📡</span><strong>RF & mmWave</strong><small>VCO, Antenna, Transceiver</small>
+            </div>
+            <div class="mini-card"><span>🧮</span><strong>RISC-V Design</strong><small>5-stage pipeline</small></div>
+            <div class="mini-card"><span>🛡️</span><strong>IP Researcher</strong><small>Patent & prior art</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SEMICONDUCTOR SHOWCASE ═══ -->
+  <section class="section section-dark" id="showcase">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">🔬 Semiconductor World</span>
+        <h2>My Engineering Universe</h2>
+        <p class="sub">Tools, technologies, and domains I work with every day.</p>
+      </div>
+
+      <!-- Rotating Orbit -->
+      <div class="orbit-wrap reveal">
+        <div class="orbit-center"><span>⚡</span><small>Core</small></div>
+        <div class="orbit orbit-1">
+          <div class="orb-node" style="--i:0;--n:6">
+            <div class="orb-node-inner">🔬<small>Wafer</small></div>
+          </div>
+          <div class="orb-node" style="--i:1;--n:6">
+            <div class="orb-node-inner">🧊<small>Chip</small></div>
+          </div>
+          <div class="orb-node" style="--i:2;--n:6">
+            <div class="orb-node-inner">📡<small>Antenna</small></div>
+          </div>
+          <div class="orb-node" style="--i:3;--n:6">
+            <div class="orb-node-inner">💻<small>FPGA</small></div>
+          </div>
+          <div class="orb-node" style="--i:4;--n:6">
+            <div class="orb-node-inner">⚙️<small>VCO</small></div>
+          </div>
+          <div class="orb-node" style="--i:5;--n:6">
+            <div class="orb-node-inner">🧮<small>RISC-V</small></div>
+          </div>
+        </div>
+        <div class="orbit orbit-2">
+          <div class="orb-node orb-sm" style="--i:0;--n:8">
+            <div class="orb-node-inner">Verilog</div>
+          </div>
+          <div class="orb-node orb-sm" style="--i:1;--n:8">
+            <div class="orb-node-inner">TCAD</div>
+          </div>
+          <div class="orb-node orb-sm" style="--i:2;--n:8">
+            <div class="orb-node-inner">BiCMOS</div>
+          </div>
+          <div class="orb-node orb-sm" style="--i:3;--n:8">
+            <div class="orb-node-inner">mmWave</div>
+          </div>
+          <div class="orb-node orb-sm" style="--i:4;--n:8">
+            <div class="orb-node-inner">PLL</div>
+          </div>
+          <div class="orb-node orb-sm" style="--i:5;--n:8">
+            <div class="orb-node-inner">CST</div>
+          </div>
+          <div class="orb-node orb-sm" style="--i:6;--n:8">
+            <div class="orb-node-inner">Vivado</div>
+          </div>
+          <div class="orb-node orb-sm" style="--i:7;--n:8">
+            <div class="orb-node-inner">MATLAB</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrolling Lab Cards -->
+      <div class="lab-scroll reveal">
+        <div class="lab-track">
+          <div class="lab-card">
+            <div class="lab-icon">🔬</div>
+            <h4>Silicon Wafer</h4>
+            <p>8-inch wafer w/ die patterns</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">🧊</div>
+            <h4>IC Die Layout</h4>
+            <p>Metal interconnect layers</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">📊</div>
+            <h4>VNA Measurement</h4>
+            <p>S-parameter characterization</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">📡</div>
+            <h4>2×2 Patch Antenna</h4>
+            <p>FR4 edge-fed for 6G</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">🔍</div>
+            <h4>Probe Station</h4>
+            <p>On-wafer RF testing</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">💻</div>
+            <h4>FPGA Board</h4>
+            <p>Xilinx Vivado synthesis</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">🔬</div>
+            <h4>Silicon Wafer</h4>
+            <p>8-inch wafer w/ die patterns</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">🧊</div>
+            <h4>IC Die Layout</h4>
+            <p>Metal interconnect layers</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">📊</div>
+            <h4>VNA Measurement</h4>
+            <p>S-parameter characterization</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">📡</div>
+            <h4>2×2 Patch Antenna</h4>
+            <p>FR4 edge-fed for 6G</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">🔍</div>
+            <h4>Probe Station</h4>
+            <p>On-wafer RF testing</p>
+          </div>
+          <div class="lab-card">
+            <div class="lab-icon">💻</div>
+            <h4>FPGA Board</h4>
+            <p>Xilinx Vivado synthesis</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EDUCATION ═══ -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">🎓 Education</span>
+        <h2>Academic Foundation</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card glass-card">
+            <div class="tl-date">2020 – 2024</div>
+            <h3>B.E. — Electronics & Communication</h3>
+            <p class="tl-place">PSNA College of Engineering, Dindigul</p>
+            <p>Specialized in VLSI Design, Semiconductor Physics, Analog & Digital Circuit Design, RF & Microwave
+              Engineering, Embedded Systems.</p>
+            <p style="margin-top:8px"><strong>Final Year Project:</strong> 6G Edge-Fed 2×2 Array Antenna — FR4
+              Substrate,
+              CST Studio simulation & VNA measurement.</p>
+            <div class="tl-badge">🏅 CGPA: 8.2 / 10</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card glass-card">
+            <div class="tl-date">2018 – 2019</div>
+            <h3>HSC (+2)</h3>
+            <p class="tl-place">St Francis School, Thirumangalam</p>
+            <div class="tl-badge">🏅 Score: 70%</div>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card glass-card">
+            <div class="tl-date">2016 – 2017</div>
+            <h3>SSLC</h3>
+            <p class="tl-place">St Francis School, Thirumangalam</p>
+            <div class="tl-badge">🏅 Score: 96%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RESEARCH ═══ -->
+  <section class="section section-dark" id="research">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">🔬 Research</span>
+        <h2>Research That Matters</h2>
+        <p class="sub">From government-funded projects to industry IP research.</p>
+      </div>
+      <div class="card-grid-2">
+        <div class="glass-card feature-card reveal">
+          <div class="card-top-glow"></div>
+          <div class="card-head"><span class="card-emoji">🛰️</span><span class="card-role">Student Researcher</span>
+          </div>
+          <h3>Helium-Based Balloon for Enemy Troop Detection</h3>
+          <p class="card-org">TNSCST · Aug 2024 – Mar 2025</p>
+          <ul>
+            <li>Designed a stealth surveillance aerostat with multi-spectral sensing (EO/IR) and secure wireless
+              telemetry.</li>
+            <li>Developed failsafe OPSEC protocol with multi-stage self-destruct mechanism.</li>
+            <li>Guide: Dr. M. Revathy, Associate Professor, Dept. of ECE.</li>
+          </ul>
+          <div class="tags"><span>Embedded</span><span class="t2">RF Comm</span><span class="t3">Sensor
+              Fusion</span><span>LoRa</span></div>
+        </div>
+        <div class="glass-card feature-card reveal">
+          <div class="card-top-glow"></div>
+          <div class="card-head"><span class="card-emoji">📋</span><span class="card-role">Researcher</span></div>
+          <h3>Semiconductor IP & Patent Research</h3>
+          <p class="card-org">RWS IP Solutions · Jun 2025 – Present</p>
+          <ul>
+            <li>Patent research and IP analysis in semiconductor technologies & VLSI design methodologies.</li>
+            <li>Technology landscape analysis, prior art searches, and competitive intelligence.</li>
+            <li>Technical documentation, patent drafting support, and innovation assessments.</li>
+          </ul>
+          <div class="tags"><span>Patent</span><span class="t2">VLSI IP</span><span class="t3">mmWave</span><span>Prior
+              Art</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">💻 Projects</span>
+        <h2>Engineering Portfolio</h2>
+      </div>
+      <div class="bento">
+        <div class="glass-card bento-xl reveal">
+          <div class="card-top-glow"></div>
+          <span class="bento-label">Analog / RF Design</span>
+          <h3>Low-Power, Low Phase Noise mmWave VCO</h3>
+          <p class="bento-tech">IHP SG13S2 · 130nm/90nm BiCMOS</p>
+          <p>Architected an energy-efficient VCO for mmWave radar & IoT edge devices.</p>
+          <ul>
+            <li>Phase noise below −100 dBc/Hz @ 1MHz, power < 5mW</li>
+            <li>Post-layout with parasitic extraction, EM sim & PVT corners (−40°C to 125°C)</li>
+            <li>Presented to TNSCST review committee</li>
+          </ul>
+          <div class="tags"><span>Cadence Virtuoso</span><span class="t2">TCAD</span><span class="t3">BiCMOS</span>
+          </div>
+        </div>
+        <div class="glass-card reveal">
+          <div class="card-top-glow"></div>
+          <span class="bento-label">Digital VLSI</span>
+          <h3>5-Stage Pipelined RISC-V Processor</h3>
+          <p class="bento-tech">Xilinx Vivado · SystemVerilog · ML</p>
+          <p>Complete RISC-V with hazard detection, forwarding, branch prediction & ML modules — 15% IPC improvement.
+          </p>
+          <div class="tags"><span>SystemVerilog</span><span class="t2">FPGA</span><span class="t3">ML</span></div>
+        </div>
+        <div class="glass-card reveal">
+          <div class="card-top-glow"></div>
+          <span class="bento-label">Digital VLSI</span>
+          <h3>Parallel Prefix Adder Analysis</h3>
+          <p class="bento-tech">Xilinx Vivado · Verilog HDL</p>
+          <p>Compared Kogge-Stone, Brent-Kung & Ladner-Fischer topologies for high-speed arithmetic.</p>
+          <div class="tags"><span>Verilog</span><span class="t2">Kogge-Stone</span><span class="t3">HPC</span></div>
+        </div>
+        <div class="glass-card reveal">
+          <div class="card-top-glow"></div>
+          <span class="bento-label">Memory</span>
+          <h3>Low-Power Dual-Port RAM</h3>
+          <p class="bento-tech">Xilinx Vivado · Power Optimization</p>
+          <p>Dual-port SRAM with clock gating, power gating & voltage scaling for multi-core/DSP.</p>
+          <div class="tags"><span>SRAM</span><span class="t2">Low-Power</span><span class="t3">Clock Gating</span></div>
+        </div>
+        <div class="glass-card reveal">
+          <div class="card-top-glow"></div>
+          <span class="bento-label">RF / Antenna</span>
+          <h3>6G Edge-Fed 2×2 Array Antenna</h3>
+          <p class="bento-tech">CST Studio · VNA</p>
+          <p>High-frequency antenna array on FR4. S11 < −10 dB, gain> 8 dBi. Fabricated & VNA-validated.</p>
+          <div class="tags"><span>CST Studio</span><span class="t2">6G</span><span class="t3">Fabricated</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SKILLS ═══ -->
+  <section class="section section-dark" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">🛠️ Skills</span>
+        <h2>Tools & Expertise</h2>
+      </div>
+      <div class="skills-layout">
+        <div class="glass-card skill-card reveal">
+          <div class="sc-icon">🖥️</div>
+          <h3>EDA & Simulation</h3>
+          <div class="chip-list">
+            <span>Xilinx Vivado</span><span>Silvaco TCAD</span><span>CST Studio</span>
+            <span>Tanner EDA</span><span>AMS Design</span><span>VNA Measurement</span>
+          </div>
+        </div>
+        <div class="glass-card skill-card reveal">
+          <div class="sc-icon">💻</div>
+          <h3>Languages & HDL</h3>
+          <div class="skill-bars">
+            <div class="sb-row">
+              <div class="sb-info"><span>Verilog / SystemVerilog</span><span class="sb-lv">Expert</span></div>
+              <div class="sb-track">
+                <div class="sb-fill" data-w="92"></div>
+              </div>
+            </div>
+            <div class="sb-row">
+              <div class="sb-info"><span>VHDL</span><span class="sb-lv">Advanced</span></div>
+              <div class="sb-track">
+                <div class="sb-fill" data-w="80"></div>
+              </div>
+            </div>
+            <div class="sb-row">
+              <div class="sb-info"><span>Python (NumPy, SciPy)</span><span class="sb-lv">Advanced</span></div>
+              <div class="sb-track">
+                <div class="sb-fill" data-w="82"></div>
+              </div>
+            </div>
+            <div class="sb-row">
+              <div class="sb-info"><span>C / C++</span><span class="sb-lv">Intermediate</span></div>
+              <div class="sb-track">
+                <div class="sb-fill" data-w="72"></div>
+              </div>
+            </div>
+            <div class="sb-row">
+              <div class="sb-info"><span>MATLAB</span><span class="sb-lv">Advanced</span></div>
+              <div class="sb-track">
+                <div class="sb-fill" data-w="78"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card skill-card reveal">
+          <div class="sc-icon">🔬</div>
+          <h3>Design Expertise</h3>
+          <div class="chip-list">
+            <span>Analog IC</span><span>Digital VLSI</span><span>RF / Microwave</span>
+            <span>Low-Power</span><span>Antenna</span><span>RISC-V</span>
+            <span>Embedded Systems</span><span>VCO / PLL</span>
+          </div>
+        </div>
+        <div class="glass-card skill-card reveal">
+          <div class="sc-icon">🏭</div>
+          <h3>PDK & Process</h3>
+          <div class="chip-list">
+            <span>IHP SG13S2 130nm</span><span>90nm CMOS</span><span>FR4 Substrate</span>
+          </div>
+        </div>
+        <div class="glass-card skill-card reveal">
+          <div class="sc-icon">🔍</div>
+          <h3>Analysis & Verification</h3>
+          <div class="chip-list">
+            <span>Timing Analysis</span><span>Power Analysis</span><span>Signal Integrity</span>
+            <span>PVT Corners</span><span>Functional Verification</span><span>Post-Layout Sim</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EXPERIENCE ═══ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">💼 Experience</span>
+        <h2>Professional Training</h2>
+      </div>
+      <div class="exp-list">
+        <div class="glass-card exp-card reveal">
+          <span class="exp-date">Oct – Dec 2025</span>
+          <h4>Intern @ CEO — <em>Xponentium</em></h4>
+          <p>Managed AI interview systems; advanced prompt engineering for candidate screening. Collaborated on business
+            strategy and AI workflows.</p>
+        </div>
+        <div class="glass-card exp-card reveal">
+          <span class="exp-date">Jun – Aug 2025</span>
+          <h4>Generative AI Intern — <em>Edunet (IBM)</em></h4>
+          <p>Training in Gen AI, LLMs, and ML frameworks. Developed AI-powered solutions for semiconductor design
+            automation.</p>
+        </div>
+        <div class="glass-card exp-card reveal">
+          <span class="exp-date">May – Aug 2025</span>
+          <h4>Project Mgmt Intern — <em>Pehchaan Trust</em></h4>
+          <p>Technical initiative planning, coordination, and cross-functional team management.</p>
+        </div>
+        <div class="glass-card exp-card reveal">
+          <span class="exp-date">May – Aug 2023</span>
+          <h4>Cisco Networking Academy</h4>
+          <p>Networking fundamentals, protocols, architectures with hands-on lab experience.</p>
+        </div>
+        <div class="glass-card exp-card reveal">
+          <span class="exp-date">Mar – May 2023</span>
+          <h4>VLSI Design Intern — <em>SURE PROed</em></h4>
+          <p>Full VLSI flow: RTL design, verification, synthesis, physical design, DFT & layout optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ACHIEVEMENTS ═══ -->
+  <section class="section section-dark" id="achievements">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">🏆 Achievements</span>
+        <h2>Recognition & Community</h2>
+      </div>
+      <div class="achieve-grid">
+        <div class="glass-card ach-card reveal"><span class="ach-icon">🎓</span>
+          <h4>Academic Excellence</h4>
+          <p>CGPA 8.2/10 — top 10%</p>
+        </div>
+        <div class="glass-card ach-card reveal"><span class="ach-icon">💻</span>
+          <h4>Hackathon Participant</h4>
+          <p>VLSI, RF & embedded hackathons</p>
+        </div>
+        <div class="glass-card ach-card reveal"><span class="ach-icon">🎤</span>
+          <h4>Aspire Leadership</h4>
+          <p>Communication & collaboration training</p>
+        </div>
+        <div class="glass-card ach-card reveal"><span class="ach-icon">🔬</span>
+          <h4>TNSCST Grant</h4>
+          <p>Merit-selected researcher</p>
+        </div>
+      </div>
+
+      <h3 class="mem-title reveal">Professional Memberships</h3>
+      <div class="mem-grid">
+        <div class="glass-card mem-card reveal"><span>🏛️</span>
+          <div><strong>RISC-V International</strong><small>Nov 2024 – Present</small></div>
+        </div>
+        <div class="glass-card mem-card reveal"><span>🌐</span>
+          <div><strong>IAENG</strong><small>Mar 2025 – Present</small></div>
+        </div>
+        <div class="glass-card mem-card reveal"><span>🔬</span>
+          <div><strong>NSRI</strong><small>Jan 2026 – Present</small></div>
+        </div>
+        <div class="glass-card mem-card reveal"><span>📋</span>
+          <div><strong>RWS IP Solutions</strong><small>Jun 2025 – Present</small></div>
+        </div>
+        <div class="glass-card mem-card reveal"><span>🏗️</span>
+          <div><strong>NSPE</strong><small>Apr 2025 – Present</small></div>
+        </div>
+        <div class="glass-card mem-card reveal"><span>📚</span>
+          <div><strong>IFERP</strong><small>Mar 2025 – Present</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RESEARCH INTERESTS ═══ -->
+  <section class="section" id="interests">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">🧭 Future Directions</span>
+        <h2>Research Interests</h2>
+      </div>
+      <div class="card-grid-2">
+        <div class="glass-card feature-card reveal">
+          <div class="card-top-glow"></div>
+          <div class="card-head"><span class="card-emoji">📡</span></div>
+          <h3>mmWave IC Design for 6G & Sensing</h3>
+          <p>CMOS/BiCMOS mmWave transceivers and PLLs for 6G communication and 77 GHz automotive radar with AI-assisted
+            beamforming.</p>
+          <div class="tags"><span>6G</span><span class="t2">PLL</span><span class="t3">77 GHz
+              Radar</span><span>Beamforming</span></div>
+        </div>
+        <div class="glass-card feature-card reveal">
+          <div class="card-top-glow"></div>
+          <div class="card-head"><span class="card-emoji">🔩</span></div>
+          <h3>Next-Gen Device Modeling & Heterogeneous Integration</h3>
+          <p>TCAD modeling of advanced nodes (FinFET, GAA-FET) for high-performance AI computing, 3D-IC and chiplet
+            integration.</p>
+          <div class="tags"><span>FinFET</span><span class="t2">GAA-FET</span><span
+              class="t3">3D-IC</span><span>Chiplets</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="section section-dark" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">✉️ Contact</span>
+        <h2>Let's Connect</h2>
+        <p class="sub">Open to research collaborations and graduate opportunities.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Get in Touch</h3>
+          <p>I'm actively seeking advanced research opportunities in VLSI design, mmWave IC, and semiconductor
+            technologies.</p>
+          <a href="mailto:karthickeaswar43815@gmail.com" class="contact-link"><span>✉️</span>
+            <div><strong>Email</strong><small>karthickeaswar43815@gmail.com</small></div>
+          </a>
+          <a href="https://www.linkedin.com/in/easwaramoorthy-sriram-vlsi-engineer-student-researcher/" target="_blank"
+            class="contact-link"><span>💼</span>
+            <div><strong>LinkedIn</strong><small>Connect on LinkedIn</small></div>
+          </a>
+          <a href="https://github.com/karthickeaswar" target="_blank" class="contact-link"><span>🐙</span>
+            <div><strong>GitHub</strong><small>github.com/karthickeaswar</small></div>
+          </a>
+
+        </div>
+        <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+          <div class="fg"><input type="text" id="name" required placeholder=" "><label for="name">Your Name *</label>
+          </div>
+          <div class="fg"><input type="email" id="email" required placeholder=" "><label for="email">Email *</label>
+          </div>
+          <div class="fg"><input type="text" id="subject" placeholder=" "><label for="subject">Subject</label></div>
+          <div class="fg"><textarea id="message" rows="4" required placeholder=" "></textarea><label
+              for="message">Message *</label></div>
+          <button type="submit" class="btn-primary">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo"><span class="logo-chip">ES</span> Easwaramoorthy Sriram</div>
+      <p>© 2025 · Crafted with passion for silicon.</p>
+    </div>
+  </footer>
+
+  <button class="btt" id="backToTop" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
+
+</html>
