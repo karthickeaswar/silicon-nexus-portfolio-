@@ -704,6 +704,37 @@
   </footer>
 
   <button class="btt" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ═══ EMAILJS SDK ═══ -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- ═══ FIREBASE SDK (modular, CDN) ═══ -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+    import { getFirestore, collection, addDoc, serverTimestamp }
+      from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+    // ─── Replace these values after creating your Firebase project ───
+    const firebaseConfig = {
+      apiKey:            "AIzaSyAhg_mzKsRG5WvRbugo_K3wU2jVx75u-A0",
+      authDomain:        "silicon-nexus-portfolio.firebaseapp.com",
+      projectId:         "silicon-nexus-portfolio",
+      storageBucket:     "silicon-nexus-portfolio.firebasestorage.app",
+      messagingSenderId: "284303554633",
+      appId:             "1:284303554633:web:111f6242bbab7f4e462798",
+    };
+
+    // ─── Replace these values from your EmailJS dashboard ─────────
+    window.EMAILJS_SERVICE_ID  = 'YOUR_EMAILJS_SERVICE_ID';
+    window.EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
+    // Public Key is initialised below
+    emailjs.init({ publicKey: 'YOUR_EMAILJS_PUBLIC_KEY' });
+
+    // ─── Expose Firebase to the non-module script.js ──────────────
+    window.firebaseApp  = initializeApp(firebaseConfig);
+    window.firestoreSDK = { getFirestore, collection, addDoc, serverTimestamp };
+  </script>
+
   <script src="script.js"></script>
 </body>
 

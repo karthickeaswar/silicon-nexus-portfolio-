@@ -334,66 +334,72 @@ function initMagnetic() {
   });
 }
 
-/* ── Contact Form ──────────────────────────────────────────── */
+/* ── Contact Form (EmailJS) ─────────────────────────────────── */
 async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const btn = form.querySelector('button[type="submit"]');
   const origText = btn.textContent;
 
-  // Disable button and show loading state
   btn.textContent = '⏳ Sending...';
   btn.disabled = true;
 
-  const formData = {
-    name: form.querySelector('#name').value,
-    email: form.querySelector('#email').value,
-    subject: form.querySelector('#subject').value,
-    message: form.querySelector('#message').value
+  const templateParams = {
+    from_name:  form.querySelector('#name').value.trim(),
+    from_email: form.querySelector('#email').value.trim(),
+    subject:    form.querySelector('#subject').value.trim() || 'New Portfolio Message',
+    message:    form.querySelector('#message').value.trim(),
   };
 
+  // Check if EmailJS is configured yet
+  const emailjsConfigured = window.EMAILJS_SERVICE_ID &&
+    !window.EMAILJS_SERVICE_ID.includes('YOUR_');
+
   try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      btn.textContent = '✓ Sent!';
-      form.reset();
-      setTimeout(() => {
-        btn.textContent = origText;
-        btn.disabled = false;
-      }, 3000);
+    if (emailjsConfigured) {
+      // ── EmailJS path (production) ──────────────────────────────
+      await emailjs.send(
+        window.EMAILJS_SERVICE_ID,
+        window.EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
     } else {
-      throw new Error(result.error || 'Failed to send');
+      // ── mailto: fallback (works without any backend) ───────────
+      const body = `Name: ${templateParams.from_name}\nEmail: ${templateParams.from_email}\n\n${templateParams.message}`;
+      window.location.href = `mailto:karthickeaswar43815@gmail.com`
+        + `?subject=${encodeURIComponent(templateParams.subject)}`
+        + `&body=${encodeURIComponent(body)}`;
     }
+
+    btn.textContent = '✓ Sent!';
+    form.reset();
+    setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 3000);
   } catch (error) {
-    console.error('Contact error:', error);
-    btn.textContent = '❌ Error';
-    alert(`Failed to send message: ${error.message}`);
-    setTimeout(() => {
-      btn.textContent = origText;
-      btn.disabled = false;
-    }, 3000);
+    console.error('EmailJS error:', error);
+    btn.textContent = '❌ Error — try again';
+    setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 3000);
   }
 }
 
-/* ── Analytics ─────────────────────────────────────────────── */
+/* ── Analytics (Firebase Firestore) ────────────────────────── */
 function initAnalytics() {
-  // Track page view on load
-  if (window.location.hostname !== 'localhost') {
-    fetch('/api/analytics', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        page: window.location.pathname,
-        referrer: document.referrer
-      })
-    }).catch(err => console.error('Analytics error:', err));
+  if (window.location.hostname === 'localhost') return;
+
+  try {
+    // Firebase SDK must be loaded in index.html
+    // Firestore security rules allow anonymous writes to /visitors
+    const { getFirestore, collection, addDoc, serverTimestamp } = window.firestoreSDK || {};
+    if (!getFirestore) return; // SDK not loaded yet
+
+    const db = getFirestore(window.firebaseApp);
+    addDoc(collection(db, 'visitors'), {
+      page:      window.location.pathname.substring(0, 200),
+      referrer:  document.referrer.substring(0, 500),
+      userAgent: navigator.userAgent.substring(0, 300),
+      timestamp: serverTimestamp(),
+    }).catch(err => console.warn('Analytics write skipped:', err.message));
+  } catch (err) {
+    console.warn('Analytics unavailable:', err.message);
   }
 }
 

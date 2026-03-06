@@ -21,7 +21,7 @@ router.post('/', analyticsLimiter, async (req, res) => {
             referrer: (referrer || '').substring(0, 500),
             ip_hash: ipHash,
             user_agent: (req.headers['user-agent'] || '').substring(0, 300),
-            country: req.headers['x-vercel-ip-country'] || null,
+            country: req.headers['x-appengine-country'] || req.headers['x-country-code'] || null,
             created_at: new Date().toISOString(),
         });
 
